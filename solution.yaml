@@ -1,0 +1,13 @@
+apiVersion: solution.sap/v1
+kind: Solution
+
+metadata:
+  name: overdue-invoice-insights-1385a
+  version: "1.0.0"
+  description: AI agent that provides insights on overdue invoices — aging analysis, risk prioritization, collection action recommendations, and personalized follow-up email drafting — connected to SAP S/4HANA Cloud Public Edition.
+
+assets:
+  - ref: ./assets/overdue-invoice-insights-agent/asset.yaml
+  - ref: ./assets/sap-s4-cadunning-mcp-server/asset.yaml
+  - ref: ./assets/sap-s4-credit-management-mcp-server/asset.yaml
+  - ref: ./assets/sap-s4-dispute-case-mcp-server/asset.yaml

@@ -1,0 +1,20 @@
+apiVersion: asset.sap/v1
+kind: Asset
+type: mcp-server
+
+metadata:
+  name: sap-s4-cadunning-mcp-server
+  version: "1.0.0"
+  translation: mcp-translation/translation.json
+  apiSpec: mcp-translation/api-spec.edmx
+
+provides:
+  apis:
+    - name: sap-s4-cadunning-mcp-server
+      kind: mcp-server
+      ordId: customer.build:apiResource:overdue-invoice-insights-1385a.sap-s4-cadunning-mcp-server:v1
+
+requires:
+  - name: CADUNNING_0001
+    kind: api
+    ordId: sap.s4:apiResource:CADUNNING_0001:v1

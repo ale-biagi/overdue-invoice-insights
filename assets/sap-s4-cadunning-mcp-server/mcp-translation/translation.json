@@ -1,0 +1,1844 @@
+{
+  "mcpTranslationVersion": "0.6",
+  "target": {
+    "ordId": "sap.s4:apiResource:CADUNNING_0001:v1",
+    "type": "edmx"
+  },
+  "serverInfo": {
+    "name": "sap.mcp/sap_self",
+    "title": "sap_self",
+    "version": "1.0.0",
+    "description": "MCP server for the sap_self service."
+  },
+  "tools": [
+    {
+      "name": "get_metadata_sap_self",
+      "title": "get_metadata_sap_self",
+      "description": "Get metadata of the OData service with optional filtering to reduce token consumption.\nReturns the metadata in XML format, which can be used to discover available entities and their properties.\nCall this endpoint every time before you call other tools to ensure understanding of the schema.\nBased on the metadata, you can dynamically create an OData request.\n\nUse filtering parameters to get specific metadata sections. Without parameters, this tool returns the complete XML metadata (which might be huge).\nOnly use the specified enum values for the filtering parameters.\n",
+      "odataType": {
+        "metadataRequest": {},
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "vary"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    },
+    {
+      "name": "batch_for_sap_self",
+      "title": "batch_for_sap_self",
+      "description": "Execute multiple OData operations in a single batch request using the $batch endpoint. This allows you to combine multiple tool calls into one HTTP request, improving efficiency when performing multiple operations.",
+      "odataType": {
+        "batchRequest": {},
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "retry-after"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_cadunning_for_sap_self",
+      "title": "list_CADunning_for_sap_self",
+      "description": "Retrieve a list of entities from the CADunning collection in the sap_self service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "CADunning",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "count"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "preference-applied"
+          },
+          {
+            "name": "vary"
+          },
+          {
+            "name": "retry-after"
+          },
+          {
+            "name": "asyncresult"
+          },
+          {
+            "name": "odata-error"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    },
+    {
+      "name": "create_cadunning_for_sap_self",
+      "title": "create_CADunning_for_sap_self",
+      "description": "Create a new instance of the CADunning EntitySet in the sap_self service. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "CADunning",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "CAMassRunDate",
+              "newParameterName": "camassrundate"
+            },
+            {
+              "name": "CAMassRunID",
+              "newParameterName": "camassrunid"
+            },
+            {
+              "name": "BusinessPartner",
+              "newParameterName": "businesspartner"
+            },
+            {
+              "name": "ContractAccount",
+              "newParameterName": "contractaccount"
+            },
+            {
+              "name": "CADunningCounter",
+              "newParameterName": "cadunningcounter"
+            },
+            {
+              "name": "CADunningLevel",
+              "newParameterName": "cadunninglevel"
+            },
+            {
+              "name": "CANextDunningDate",
+              "newParameterName": "canextdunningdate"
+            },
+            {
+              "name": "TransactionCurrency",
+              "newParameterName": "transactioncurrency"
+            },
+            {
+              "name": "CADunningBalance",
+              "newParameterName": "cadunningbalance"
+            },
+            {
+              "name": "CACollectionStrategy",
+              "newParameterName": "cacollectionstrategy"
+            },
+            {
+              "name": "CACollectionStep",
+              "newParameterName": "cacollectionstep"
+            },
+            {
+              "name": "_DunItem",
+              "newParameterName": "dunitem"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "location"
+          },
+          {
+            "name": "odata-entityid"
+          },
+          {
+            "name": "preference-applied"
+          },
+          {
+            "name": "vary"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    },
+    {
+      "name": "update_cadunning_for_sap_self",
+      "title": "update_CADunning_for_sap_self",
+      "description": "Update an entity in CADunning EntitySet in the sap_self service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "CADunning",
+          "crudOperation": "update",
+          "parameters": [
+            {
+              "name": "CAMassRunDate",
+              "newParameterName": "camassrundate"
+            },
+            {
+              "name": "CAMassRunID",
+              "newParameterName": "camassrunid"
+            },
+            {
+              "name": "BusinessPartner",
+              "newParameterName": "businesspartner"
+            },
+            {
+              "name": "ContractAccount",
+              "newParameterName": "contractaccount"
+            },
+            {
+              "name": "CADunningCounter",
+              "newParameterName": "cadunningcounter"
+            },
+            {
+              "name": "CADunningLevel",
+              "newParameterName": "cadunninglevel"
+            },
+            {
+              "name": "CANextDunningDate",
+              "newParameterName": "canextdunningdate"
+            },
+            {
+              "name": "TransactionCurrency",
+              "newParameterName": "transactioncurrency"
+            },
+            {
+              "name": "CADunningBalance",
+              "newParameterName": "cadunningbalance"
+            },
+            {
+              "name": "CACollectionStrategy",
+              "newParameterName": "cacollectionstrategy"
+            },
+            {
+              "name": "CACollectionStep",
+              "newParameterName": "cacollectionstep"
+            },
+            {
+              "name": "_DunItem",
+              "newParameterName": "dunitem"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "preference-applied"
+          },
+          {
+            "name": "vary"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delete_cadunning_for_sap_self",
+      "title": "delete_CADunning_for_sap_self",
+      "description": "Delete an entity from CADunning EntitySet in the sap_self service.",
+      "odataType": {
+        "entitySet": {
+          "name": "CADunning",
+          "crudOperation": "delete",
+          "parameters": [
+            {
+              "name": "CAMassRunDate",
+              "newParameterName": "camassrundate"
+            },
+            {
+              "name": "CAMassRunID",
+              "newParameterName": "camassrunid"
+            },
+            {
+              "name": "BusinessPartner",
+              "newParameterName": "businesspartner"
+            },
+            {
+              "name": "ContractAccount",
+              "newParameterName": "contractaccount"
+            },
+            {
+              "name": "CADunningCounter",
+              "newParameterName": "cadunningcounter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "preference-applied"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_cadunning_for_sap_self",
+      "title": "get_CADunning_for_sap_self",
+      "description": "Retrieve a single entity by its key from the CADunning collection in the sap_self service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "CADunning",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "CAMassRunDate",
+              "newParameterName": "camassrundate"
+            },
+            {
+              "name": "CAMassRunID",
+              "newParameterName": "camassrunid"
+            },
+            {
+              "name": "BusinessPartner",
+              "newParameterName": "businesspartner"
+            },
+            {
+              "name": "ContractAccount",
+              "newParameterName": "contractaccount"
+            },
+            {
+              "name": "CADunningCounter",
+              "newParameterName": "cadunningcounter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "preference-applied"
+          },
+          {
+            "name": "vary"
+          },
+          {
+            "name": "retry-after"
+          },
+          {
+            "name": "asyncresult"
+          },
+          {
+            "name": "odata-error"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_cadunning_for_sap_self",
+      "title": "count_CADunning_for_sap_self",
+      "description": "Get the total count of entities in the CADunning collection in the sap_self service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sap_self tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "CADunning",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_cadunningitem_for_sap_self",
+      "title": "list_CADunningItem_for_sap_self",
+      "description": "Retrieve a list of entities from the CADunningItem collection in the sap_self service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "CADunningItem",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "count"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "preference-applied"
+          },
+          {
+            "name": "vary"
+          },
+          {
+            "name": "retry-after"
+          },
+          {
+            "name": "asyncresult"
+          },
+          {
+            "name": "odata-error"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    },
+    {
+      "name": "create_cadunningitem_for_sap_self",
+      "title": "create_CADunningItem_for_sap_self",
+      "description": "Create a new instance of the CADunningItem EntitySet in the sap_self service. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "CADunningItem",
+          "crudOperation": "create",
+          "parameters": [
+            {
+              "name": "CAMassRunDate",
+              "newParameterName": "camassrundate"
+            },
+            {
+              "name": "CAMassRunID",
+              "newParameterName": "camassrunid"
+            },
+            {
+              "name": "BusinessPartner",
+              "newParameterName": "businesspartner"
+            },
+            {
+              "name": "ContractAccount",
+              "newParameterName": "contractaccount"
+            },
+            {
+              "name": "CADunningCounter",
+              "newParameterName": "cadunningcounter"
+            },
+            {
+              "name": "CADocumentNumber",
+              "newParameterName": "cadocumentnumber"
+            },
+            {
+              "name": "CARepetitionItemNumber",
+              "newParameterName": "carepetitionitemnumber"
+            },
+            {
+              "name": "CABPItemNumber",
+              "newParameterName": "cabpitemnumber"
+            },
+            {
+              "name": "CASubItemNumber",
+              "newParameterName": "casubitemnumber"
+            },
+            {
+              "name": "CompanyCode",
+              "newParameterName": "companycode"
+            },
+            {
+              "name": "TransactionCurrency",
+              "newParameterName": "transactioncurrency"
+            },
+            {
+              "name": "CADunningAmount",
+              "newParameterName": "cadunningamount"
+            },
+            {
+              "name": "CANetDueDate",
+              "newParameterName": "canetduedate"
+            },
+            {
+              "name": "CADunningLevel",
+              "newParameterName": "cadunninglevel"
+            },
+            {
+              "name": "CANextDunningLevel",
+              "newParameterName": "canextdunninglevel"
+            },
+            {
+              "name": "_DunHeader",
+              "newParameterName": "dunheader"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "location"
+          },
+          {
+            "name": "odata-entityid"
+          },
+          {
+            "name": "preference-applied"
+          },
+          {
+            "name": "vary"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    },
+    {
+      "name": "update_cadunningitem_for_sap_self",
+      "title": "update_CADunningItem_for_sap_self",
+      "description": "Update an entity in CADunningItem EntitySet in the sap_self service. Provide the key properties to identify the entity and the properties to update in the request body. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "CADunningItem",
+          "crudOperation": "update",
+          "parameters": [
+            {
+              "name": "CAMassRunDate",
+              "newParameterName": "camassrundate"
+            },
+            {
+              "name": "CAMassRunID",
+              "newParameterName": "camassrunid"
+            },
+            {
+              "name": "BusinessPartner",
+              "newParameterName": "businesspartner"
+            },
+            {
+              "name": "ContractAccount",
+              "newParameterName": "contractaccount"
+            },
+            {
+              "name": "CADunningCounter",
+              "newParameterName": "cadunningcounter"
+            },
+            {
+              "name": "CADocumentNumber",
+              "newParameterName": "cadocumentnumber"
+            },
+            {
+              "name": "CARepetitionItemNumber",
+              "newParameterName": "carepetitionitemnumber"
+            },
+            {
+              "name": "CABPItemNumber",
+              "newParameterName": "cabpitemnumber"
+            },
+            {
+              "name": "CASubItemNumber",
+              "newParameterName": "casubitemnumber"
+            },
+            {
+              "name": "CompanyCode",
+              "newParameterName": "companycode"
+            },
+            {
+              "name": "TransactionCurrency",
+              "newParameterName": "transactioncurrency"
+            },
+            {
+              "name": "CADunningAmount",
+              "newParameterName": "cadunningamount"
+            },
+            {
+              "name": "CANetDueDate",
+              "newParameterName": "canetduedate"
+            },
+            {
+              "name": "CADunningLevel",
+              "newParameterName": "cadunninglevel"
+            },
+            {
+              "name": "CANextDunningLevel",
+              "newParameterName": "canextdunninglevel"
+            },
+            {
+              "name": "_DunHeader",
+              "newParameterName": "dunheader"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "preference-applied"
+          },
+          {
+            "name": "vary"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    },
+    {
+      "name": "delete_cadunningitem_for_sap_self",
+      "title": "delete_CADunningItem_for_sap_self",
+      "description": "Delete an entity from CADunningItem EntitySet in the sap_self service.",
+      "odataType": {
+        "entitySet": {
+          "name": "CADunningItem",
+          "crudOperation": "delete",
+          "parameters": [
+            {
+              "name": "CAMassRunDate",
+              "newParameterName": "camassrundate"
+            },
+            {
+              "name": "CAMassRunID",
+              "newParameterName": "camassrunid"
+            },
+            {
+              "name": "BusinessPartner",
+              "newParameterName": "businesspartner"
+            },
+            {
+              "name": "ContractAccount",
+              "newParameterName": "contractaccount"
+            },
+            {
+              "name": "CADunningCounter",
+              "newParameterName": "cadunningcounter"
+            },
+            {
+              "name": "CADocumentNumber",
+              "newParameterName": "cadocumentnumber"
+            },
+            {
+              "name": "CARepetitionItemNumber",
+              "newParameterName": "carepetitionitemnumber"
+            },
+            {
+              "name": "CABPItemNumber",
+              "newParameterName": "cabpitemnumber"
+            },
+            {
+              "name": "CASubItemNumber",
+              "newParameterName": "casubitemnumber"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "preference-applied"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_cadunningitem_for_sap_self",
+      "title": "get_CADunningItem_for_sap_self",
+      "description": "Retrieve a single entity by its key from the CADunningItem collection in the sap_self service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "CADunningItem",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "CAMassRunDate",
+              "newParameterName": "camassrundate"
+            },
+            {
+              "name": "CAMassRunID",
+              "newParameterName": "camassrunid"
+            },
+            {
+              "name": "BusinessPartner",
+              "newParameterName": "businesspartner"
+            },
+            {
+              "name": "ContractAccount",
+              "newParameterName": "contractaccount"
+            },
+            {
+              "name": "CADunningCounter",
+              "newParameterName": "cadunningcounter"
+            },
+            {
+              "name": "CADocumentNumber",
+              "newParameterName": "cadocumentnumber"
+            },
+            {
+              "name": "CARepetitionItemNumber",
+              "newParameterName": "carepetitionitemnumber"
+            },
+            {
+              "name": "CABPItemNumber",
+              "newParameterName": "cabpitemnumber"
+            },
+            {
+              "name": "CASubItemNumber",
+              "newParameterName": "casubitemnumber"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "preference-applied"
+          },
+          {
+            "name": "vary"
+          },
+          {
+            "name": "retry-after"
+          },
+          {
+            "name": "asyncresult"
+          },
+          {
+            "name": "odata-error"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_cadunningitem_for_sap_self",
+      "title": "count_CADunningItem_for_sap_self",
+      "description": "Get the total count of entities in the CADunningItem collection in the sap_self service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sap_self tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "CADunningItem",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list__dunitem_in_cadunning_for_sap_self",
+      "title": "list__DunItem_in_CADunning_for_sap_self",
+      "description": "Navigate from CADunning to related CADunningItem_Type entities via the '_DunItem' navigation property. Supports OData query options for filtering, sorting, paging, expanding, counting, and selecting specific properties. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "CADunning",
+          "navigationProperty": {
+            "name": "_DunItem",
+            "crudOperation": "read",
+            "parameters": [
+              {
+                "name": "filter"
+              },
+              {
+                "name": "select"
+              },
+              {
+                "name": "orderby"
+              },
+              {
+                "name": "top"
+              },
+              {
+                "name": "skip"
+              },
+              {
+                "name": "expand"
+              },
+              {
+                "name": "count"
+              }
+            ]
+          },
+          "parameters": [
+            {
+              "name": "CAMassRunDate",
+              "newParameterName": "camassrundate"
+            },
+            {
+              "name": "CAMassRunID",
+              "newParameterName": "camassrunid"
+            },
+            {
+              "name": "BusinessPartner",
+              "newParameterName": "businesspartner"
+            },
+            {
+              "name": "ContractAccount",
+              "newParameterName": "contractaccount"
+            },
+            {
+              "name": "CADunningCounter",
+              "newParameterName": "cadunningcounter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "preference-applied"
+          },
+          {
+            "name": "vary"
+          },
+          {
+            "name": "retry-after"
+          },
+          {
+            "name": "asyncresult"
+          },
+          {
+            "name": "odata-error"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    },
+    {
+      "name": "create__dunitem_in_cadunning_for_sap_self",
+      "title": "create__DunItem_in_CADunning_for_sap_self",
+      "description": "Create a new CADunningItem_Type entity via the '_DunItem' navigation property of CADunning. Provide the parent key and the properties of the new entity. If the structure is unknown, call get_metadata_sap_self tool first.",
+      "odataType": {
+        "entitySet": {
+          "name": "CADunning",
+          "navigationProperty": {
+            "name": "_DunItem",
+            "crudOperation": "create",
+            "parameters": [
+              {
+                "name": "CAMassRunDate",
+                "newParameterName": "camassrundate_2"
+              },
+              {
+                "name": "CAMassRunID",
+                "newParameterName": "camassrunid_2"
+              },
+              {
+                "name": "BusinessPartner",
+                "newParameterName": "businesspartner_2"
+              },
+              {
+                "name": "ContractAccount",
+                "newParameterName": "contractaccount_2"
+              },
+              {
+                "name": "CADunningCounter",
+                "newParameterName": "cadunningcounter_2"
+              },
+              {
+                "name": "CADocumentNumber",
+                "newParameterName": "cadocumentnumber"
+              },
+              {
+                "name": "CARepetitionItemNumber",
+                "newParameterName": "carepetitionitemnumber"
+              },
+              {
+                "name": "CABPItemNumber",
+                "newParameterName": "cabpitemnumber"
+              },
+              {
+                "name": "CASubItemNumber",
+                "newParameterName": "casubitemnumber"
+              },
+              {
+                "name": "CompanyCode",
+                "newParameterName": "companycode"
+              },
+              {
+                "name": "TransactionCurrency",
+                "newParameterName": "transactioncurrency"
+              },
+              {
+                "name": "CADunningAmount",
+                "newParameterName": "cadunningamount"
+              },
+              {
+                "name": "CANetDueDate",
+                "newParameterName": "canetduedate"
+              },
+              {
+                "name": "CADunningLevel",
+                "newParameterName": "cadunninglevel"
+              },
+              {
+                "name": "CANextDunningLevel",
+                "newParameterName": "canextdunninglevel"
+              },
+              {
+                "name": "_DunHeader",
+                "newParameterName": "dunheader"
+              }
+            ]
+          },
+          "parameters": [
+            {
+              "name": "CAMassRunDate",
+              "newParameterName": "camassrundate"
+            },
+            {
+              "name": "CAMassRunID",
+              "newParameterName": "camassrunid"
+            },
+            {
+              "name": "BusinessPartner",
+              "newParameterName": "businesspartner"
+            },
+            {
+              "name": "ContractAccount",
+              "newParameterName": "contractaccount"
+            },
+            {
+              "name": "CADunningCounter",
+              "newParameterName": "cadunningcounter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "location"
+          },
+          {
+            "name": "odata-entityid"
+          },
+          {
+            "name": "preference-applied"
+          },
+          {
+            "name": "vary"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count__dunitem_in_cadunning_for_sap_self",
+      "title": "count__DunItem_in_CADunning_for_sap_self",
+      "description": "Count CADunningItem_Type entities accessible via the '_DunItem' navigation property of CADunning in the sap_self service. Returns the total number of matching entities.",
+      "odataType": {
+        "entitySet": {
+          "name": "CADunning",
+          "navigationProperty": {
+            "name": "_DunItem",
+            "crudOperation": "count",
+            "parameters": [
+              {
+                "name": "filter"
+              }
+            ]
+          },
+          "parameters": [
+            {
+              "name": "CAMassRunDate",
+              "newParameterName": "camassrundate"
+            },
+            {
+              "name": "CAMassRunID",
+              "newParameterName": "camassrunid"
+            },
+            {
+              "name": "BusinessPartner",
+              "newParameterName": "businesspartner"
+            },
+            {
+              "name": "ContractAccount",
+              "newParameterName": "contractaccount"
+            },
+            {
+              "name": "CADunningCounter",
+              "newParameterName": "cadunningcounter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get__dunheader_in_cadunningitem_for_sap_self",
+      "title": "get__DunHeader_in_CADunningItem_for_sap_self",
+      "description": "Navigate from CADunningItem to the related CADunning_Type entity via the '_DunHeader' navigation property. Supports $select and $expand query options. If the structure of the entity is not known, call get_metadata_sap_self tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "CADunningItem",
+          "navigationProperty": {
+            "name": "_DunHeader",
+            "crudOperation": "readByKey",
+            "parameters": [
+              {
+                "name": "select"
+              },
+              {
+                "name": "expand"
+              }
+            ]
+          },
+          "parameters": [
+            {
+              "name": "CAMassRunDate",
+              "newParameterName": "camassrundate"
+            },
+            {
+              "name": "CAMassRunID",
+              "newParameterName": "camassrunid"
+            },
+            {
+              "name": "BusinessPartner",
+              "newParameterName": "businesspartner"
+            },
+            {
+              "name": "ContractAccount",
+              "newParameterName": "contractaccount"
+            },
+            {
+              "name": "CADunningCounter",
+              "newParameterName": "cadunningcounter"
+            },
+            {
+              "name": "CADocumentNumber",
+              "newParameterName": "cadocumentnumber"
+            },
+            {
+              "name": "CARepetitionItemNumber",
+              "newParameterName": "carepetitionitemnumber"
+            },
+            {
+              "name": "CABPItemNumber",
+              "newParameterName": "cabpitemnumber"
+            },
+            {
+              "name": "CASubItemNumber",
+              "newParameterName": "casubitemnumber"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "preference-applied"
+          },
+          {
+            "name": "vary"
+          },
+          {
+            "name": "retry-after"
+          },
+          {
+            "name": "asyncresult"
+          },
+          {
+            "name": "odata-error"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    },
+    {
+      "name": "update__dunheader_in_cadunningitem_for_sap_self",
+      "title": "update__DunHeader_in_CADunningItem_for_sap_self",
+      "description": "Update the CADunning_Type entity navigated from CADunningItem via the '_DunHeader' navigation property (HTTP PATCH). Provide the parent key and the properties to update. If the structure is unknown, call get_metadata_sap_self tool first.",
+      "odataType": {
+        "entitySet": {
+          "name": "CADunningItem",
+          "navigationProperty": {
+            "name": "_DunHeader",
+            "crudOperation": "update",
+            "parameters": [
+              {
+                "name": "CADunningLevel",
+                "newParameterName": "cadunninglevel"
+              },
+              {
+                "name": "CANextDunningDate",
+                "newParameterName": "canextdunningdate"
+              },
+              {
+                "name": "TransactionCurrency",
+                "newParameterName": "transactioncurrency"
+              },
+              {
+                "name": "CADunningBalance",
+                "newParameterName": "cadunningbalance"
+              },
+              {
+                "name": "CACollectionStrategy",
+                "newParameterName": "cacollectionstrategy"
+              },
+              {
+                "name": "CACollectionStep",
+                "newParameterName": "cacollectionstep"
+              },
+              {
+                "name": "_DunItem",
+                "newParameterName": "dunitem"
+              }
+            ]
+          },
+          "parameters": [
+            {
+              "name": "CAMassRunDate",
+              "newParameterName": "camassrundate"
+            },
+            {
+              "name": "CAMassRunID",
+              "newParameterName": "camassrunid"
+            },
+            {
+              "name": "BusinessPartner",
+              "newParameterName": "businesspartner"
+            },
+            {
+              "name": "ContractAccount",
+              "newParameterName": "contractaccount"
+            },
+            {
+              "name": "CADunningCounter",
+              "newParameterName": "cadunningcounter"
+            },
+            {
+              "name": "CADocumentNumber",
+              "newParameterName": "cadocumentnumber"
+            },
+            {
+              "name": "CARepetitionItemNumber",
+              "newParameterName": "carepetitionitemnumber"
+            },
+            {
+              "name": "CABPItemNumber",
+              "newParameterName": "cabpitemnumber"
+            },
+            {
+              "name": "CASubItemNumber",
+              "newParameterName": "casubitemnumber"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "odata-version"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "preference-applied"
+          },
+          {
+            "name": "vary"
+          },
+          {
+            "name": "sap-messages"
+          }
+        ]
+      }
+    }
+  ]
+}

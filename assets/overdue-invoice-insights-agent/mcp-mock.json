@@ -1,0 +1,327 @@
+{
+  "servers": {
+    "sap-s4-cadunning": {
+      "mcp_server_name": "sap.mcp/sap_self",
+      "description": "MCP server for the S/4HANA Contract Accounting Dunning (CADUNNING_0001) OData service.",
+      "tools": {
+        "list_cadunning_for_sap_self": {
+          "description": "Retrieve a list of entities from the CADunning collection. Returns dunning headers with balance, level, strategy and dates.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "$top": {"type": "string", "description": "Maximum number of records to return"},
+              "$skip": {"type": "string", "description": "Number of records to skip (pagination)"},
+              "$filter": {"type": "string", "description": "OData filter expression"},
+              "$select": {"type": "string", "description": "Comma-separated list of properties to return"},
+              "$expand": {"type": "string", "description": "Navigation properties to expand"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "CAMassRunDate": "2026-08-01",
+                "CAMassRunID": "RUN01",
+                "BusinessPartner": "BP-1001",
+                "ContractAccount": "CA-500001",
+                "CADunningCounter": "000001",
+                "CADunningLevel": "2",
+                "CANextDunningDate": "2026-10-15",
+                "TransactionCurrency": "EUR",
+                "CADunningBalance": "18500.00",
+                "CACollectionStrategy": "01",
+                "CACollectionStep": "0010"
+              },
+              {
+                "CAMassRunDate": "2026-08-01",
+                "CAMassRunID": "RUN01",
+                "BusinessPartner": "BP-2002",
+                "ContractAccount": "CA-500002",
+                "CADunningCounter": "000002",
+                "CADunningLevel": "3",
+                "CANextDunningDate": "2026-10-01",
+                "TransactionCurrency": "EUR",
+                "CADunningBalance": "52000.00",
+                "CACollectionStrategy": "02",
+                "CACollectionStep": "0030"
+              }
+            ]
+          }
+        },
+        "list_cadunningitem_for_sap_self": {
+          "description": "Retrieve a list of dunning items (individual overdue invoices) from the CADunningItem collection.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "$top": {"type": "string", "description": "Maximum number of records to return"},
+              "$skip": {"type": "string", "description": "Number of records to skip (pagination)"},
+              "$filter": {"type": "string", "description": "OData filter expression (e.g. BusinessPartner eq 'BP-1001')"},
+              "$select": {"type": "string", "description": "Comma-separated list of properties to return"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "CAMassRunDate": "2026-08-01",
+                "CAMassRunID": "RUN01",
+                "BusinessPartner": "BP-1001",
+                "ContractAccount": "CA-500001",
+                "CADunningCounter": "000001",
+                "CADocumentNumber": "INV-10000123",
+                "CARepetitionItemNumber": "001",
+                "CABPItemNumber": "0001",
+                "CASubItemNumber": "001",
+                "CompanyCode": "1000",
+                "TransactionCurrency": "EUR",
+                "CADunningAmount": "8500.00",
+                "CANetDueDate": "2026-07-15",
+                "CADunningLevel": "2",
+                "CANextDunningLevel": "3"
+              },
+              {
+                "CAMassRunDate": "2026-08-01",
+                "CAMassRunID": "RUN01",
+                "BusinessPartner": "BP-1001",
+                "ContractAccount": "CA-500001",
+                "CADunningCounter": "000001",
+                "CADocumentNumber": "INV-10000124",
+                "CARepetitionItemNumber": "001",
+                "CABPItemNumber": "0002",
+                "CASubItemNumber": "001",
+                "CompanyCode": "1000",
+                "TransactionCurrency": "EUR",
+                "CADunningAmount": "10000.00",
+                "CANetDueDate": "2026-06-30",
+                "CADunningLevel": "2",
+                "CANextDunningLevel": "3"
+              }
+            ]
+          }
+        },
+        "get_cadunning_for_sap_self": {
+          "description": "Retrieve a single CADunning entity by its key.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "CAMassRunDate": {"type": "string", "description": "Mass run date"},
+              "CAMassRunID": {"type": "string", "description": "Mass run ID"},
+              "BusinessPartner": {"type": "string", "description": "Business partner number"},
+              "ContractAccount": {"type": "string", "description": "Contract account number"},
+              "CADunningCounter": {"type": "string", "description": "Dunning counter"}
+            },
+            "required": ["CAMassRunDate", "CAMassRunID", "BusinessPartner", "ContractAccount", "CADunningCounter"]
+          },
+          "mock_response": {
+            "CAMassRunDate": "2026-08-01",
+            "CAMassRunID": "RUN01",
+            "BusinessPartner": "BP-1001",
+            "ContractAccount": "CA-500001",
+            "CADunningCounter": "000001",
+            "CADunningLevel": "2",
+            "CANextDunningDate": "2026-10-15",
+            "TransactionCurrency": "EUR",
+            "CADunningBalance": "18500.00",
+            "CACollectionStrategy": "01",
+            "CACollectionStep": "0010"
+          }
+        },
+        "get_metadata_sap_self": {
+          "description": "Get OData service metadata.",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": {"metadata": "<mock-edmx-metadata>"}
+        },
+        "batch_for_sap_self": {
+          "description": "Execute batch OData requests.",
+          "input_schema": {"type": "object", "properties": {"requests": {"type": "array"}}, "required": []},
+          "mock_response": {"responses": []}
+        },
+        "count_cadunning_for_sap_self": {
+          "description": "Count CADunning entities.",
+          "input_schema": {"type": "object", "properties": {"$filter": {"type": "string"}}, "required": []},
+          "mock_response": 42
+        },
+        "count_cadunningitem_for_sap_self": {
+          "description": "Count CADunningItem entities.",
+          "input_schema": {"type": "object", "properties": {"$filter": {"type": "string"}}, "required": []},
+          "mock_response": 87
+        }
+      }
+    },
+    "sap-s4-credit-management": {
+      "mcp_server_name": "sap.mcp/cds_api_crdtmbusinesspartner",
+      "description": "MCP server for the S/4HANA Credit Management Master Data (API_CRDTMBUSINESSPARTNER) OData service.",
+      "tools": {
+        "list_creditmgmtbusinesspartner_for_cds_api_crdtmbusinesspartner": {
+          "description": "Retrieve a list of Credit Management Business Partners.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "$top": {"type": "string", "description": "Maximum number of records"},
+              "$filter": {"type": "string", "description": "OData filter expression"},
+              "$select": {"type": "string", "description": "Properties to return"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "BusinessPartner": "BP-1001",
+                "CreditRiskClass": "B",
+                "CreditWorthinessScoreValue": "650",
+                "CalculatedCreditRiskClass": "B",
+                "CrdtMgmtBusinessPartnerGroup": "0001"
+              },
+              {
+                "BusinessPartner": "BP-2002",
+                "CreditRiskClass": "C",
+                "CreditWorthinessScoreValue": "420",
+                "CalculatedCreditRiskClass": "C",
+                "CrdtMgmtBusinessPartnerGroup": "0001"
+              }
+            ]
+          }
+        },
+        "get_creditmgmtbusinesspartner_for_cds_api_crdtmbusinesspartner": {
+          "description": "Retrieve a single Credit Management Business Partner by key.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "BusinessPartner": {"type": "string", "description": "Business partner number"}
+            },
+            "required": ["BusinessPartner"]
+          },
+          "mock_response": {
+            "BusinessPartner": "BP-1001",
+            "CreditRiskClass": "B",
+            "CreditWorthinessScoreValue": "650",
+            "CalculatedCreditRiskClass": "B"
+          }
+        },
+        "list_creditmanagementaccount_for_cds_api_crdtmbusinesspartner": {
+          "description": "Retrieve Credit Management Accounts.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "$filter": {"type": "string"},
+              "$select": {"type": "string"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "BusinessPartner": "BP-1001",
+                "CreditSegment": "0001",
+                "BusinessPartnerIsCritical": false,
+                "CreditAccountIsBlocked": false,
+                "CreditLimitAmount": "50000.00",
+                "CreditSegmentCurrency": "EUR"
+              },
+              {
+                "BusinessPartner": "BP-2002",
+                "CreditSegment": "0001",
+                "BusinessPartnerIsCritical": true,
+                "CreditAccountIsBlocked": true,
+                "CreditLimitAmount": "25000.00",
+                "CreditSegmentCurrency": "EUR"
+              }
+            ]
+          }
+        },
+        "get_metadata_cds_api_crdtmbusinesspartner": {
+          "description": "Get OData service metadata.",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": {"metadata": "<mock-edmx-metadata>"}
+        }
+      }
+    },
+    "sap-s4-dispute-case": {
+      "mcp_server_name": "sap.mcp/sap_self",
+      "description": "MCP server for the S/4HANA Contract Accounting Dispute Case (CADISPUTECASE_0001) OData service.",
+      "tools": {
+        "list_disputecase_for_sap_self": {
+          "description": "Retrieve a list of dispute cases. Filter by BusinessPartner to find disputes for a specific customer.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "$top": {"type": "string", "description": "Maximum number of records"},
+              "$filter": {"type": "string", "description": "OData filter (e.g. BusinessPartner eq 'BP-2002')"},
+              "$select": {"type": "string", "description": "Properties to return"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "CaseUUID": "550e8400-e29b-41d4-a716-446655440000",
+                "BusinessPartner": "BP-2002",
+                "BusinessPartnerFullName": "Globex Corporation",
+                "ContractAccount": "CA-500002",
+                "DisputedAmount": "12000.00",
+                "CARemainingDisputedAmount": "12000.00",
+                "DisputeCaseCurrency": "EUR",
+                "CADisputeType": "DISP",
+                "CADisputeTypeText": "General Dispute",
+                "CompanyCode": "1000",
+                "CADisputeCase": "DCASE-001",
+                "CaseCreationDate": "2026-09-01",
+                "CaseStatus": "01",
+                "CaseStatusName": "Open",
+                "CasePriority": "2",
+                "CaseTitle": "Invoice amount dispute",
+                "DisputeCaseRootCause": "PRCE",
+                "CaseRootCauseDescription": "Pricing discrepancy"
+              }
+            ]
+          }
+        },
+        "get_disputecase_for_sap_self": {
+          "description": "Retrieve a single dispute case by UUID.",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "CaseUUID": {"type": "string", "description": "Case UUID"}
+            },
+            "required": ["CaseUUID"]
+          },
+          "mock_response": {
+            "CaseUUID": "550e8400-e29b-41d4-a716-446655440000",
+            "BusinessPartner": "BP-2002",
+            "BusinessPartnerFullName": "Globex Corporation",
+            "DisputedAmount": "12000.00",
+            "CARemainingDisputedAmount": "12000.00",
+            "DisputeCaseCurrency": "EUR",
+            "CaseStatus": "01",
+            "CaseStatusName": "Open",
+            "CaseTitle": "Invoice amount dispute"
+          }
+        },
+        "count_disputecase_for_sap_self": {
+          "description": "Count dispute cases.",
+          "input_schema": {"type": "object", "properties": {"$filter": {"type": "string"}}, "required": []},
+          "mock_response": 1
+        },
+        "get_metadata_sap_self": {
+          "description": "Get OData service metadata.",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": {"metadata": "<mock-edmx-metadata>"}
+        }
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "created_for_agent": "overdue-invoice-insights-agent",
+    "mock_mode": true,
+    "deterministic": true,
+    "total_servers": 3,
+    "total_tools": 15,
+    "generated_from": [
+      "assets/sap-s4-cadunning-mcp-server/mcp-translation/translation.json",
+      "assets/sap-s4-credit-management-mcp-server/mcp-translation/translation.json",
+      "assets/sap-s4-dispute-case-mcp-server/mcp-translation/translation.json"
+    ],
+    "generation_date": "2026-09-29"
+  }
+}
